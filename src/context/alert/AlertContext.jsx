@@ -1,5 +1,6 @@
 import { createContext, useReducer } from 'react'
 import alertReducer from './AlertReducer'
+import PropTypes from "prop-types";
 
 const AlertContext = createContext()
 
@@ -24,5 +25,9 @@ export const AlertProvider = ({ children }) => {
     </AlertContext.Provider>
   )
 }
+
+AlertProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default AlertContext
